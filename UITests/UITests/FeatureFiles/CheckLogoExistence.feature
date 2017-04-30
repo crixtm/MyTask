@@ -12,4 +12,3 @@ Scenario Outline: Test whether the company logo appeared or not
 	| Page  |
 	| Home  |
 	| Form  |
-	| Error |

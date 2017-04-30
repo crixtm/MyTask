@@ -18,21 +18,21 @@ namespace UITests.FeatureFiles
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OpenErrorPage")]
-    public partial class OpenErrorPageFeature
+    [NUnit.Framework.DescriptionAttribute("CheckFormPageElementsExist")]
+    public partial class CheckFormPageElementsExistFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "OpenErrorPage.feature"
+#line 1 "CheckFormPageElementsExist.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenErrorPage", "\tIn order to check error tolerance\r\n\tAs a tester\r\n\tI want to see the error page a" +
-                    "nd the HTTP404 error\t", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckFormPageElementsExist", "\tIn order to check HomePage needed visual elements\r\n\tAs a tester\r\n\tI want to see " +
+                    "the elements", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,39 +65,34 @@ namespace UITests.FeatureFiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Clicking ErrorButton loads ErrorPage")]
+        [NUnit.Framework.DescriptionAttribute("Validate the expected messages")]
         [NUnit.Framework.CategoryAttribute("High")]
-        [NUnit.Framework.CategoryAttribute("ErrorPage")]
         [NUnit.Framework.CategoryAttribute("FormPage")]
-        [NUnit.Framework.CategoryAttribute("HomePage")]
-        [NUnit.Framework.CategoryAttribute("Navigation")]
-        [NUnit.Framework.CategoryAttribute("MouseClick")]
-        [NUnit.Framework.CategoryAttribute("REQ_UI_07")]
-        [NUnit.Framework.TestCaseAttribute("Home", new string[0])]
+        [NUnit.Framework.CategoryAttribute("FormElements")]
+        [NUnit.Framework.CategoryAttribute("REQ_UI_11")]
         [NUnit.Framework.TestCaseAttribute("Form", new string[0])]
-        public virtual void ClickingErrorButtonLoadsErrorPage(string page, string[] exampleTags)
+        public virtual void ValidateTheExpectedMessages(string page, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "High",
-                    "ErrorPage",
                     "FormPage",
-                    "HomePage",
-                    "Navigation",
-                    "MouseClick",
-                    "REQ_UI_07"};
+                    "FormElements",
+                    "REQ_UI_11"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Clicking ErrorButton loads ErrorPage", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate the expected messages", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given(string.Format("I have {0} page opened", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have opened the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("I press Error button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I open {0}", page), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("Http 404 Error should appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("inputbox should appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 11
+ testRunner.And("submit button should appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

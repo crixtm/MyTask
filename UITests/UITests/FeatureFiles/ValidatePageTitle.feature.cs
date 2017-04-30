@@ -65,15 +65,14 @@ namespace UITests.FeatureFiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate that the opened page\'s title is \"UI Testing Site\"")]
+        [NUnit.Framework.DescriptionAttribute("Validate that the title of the page")]
         [NUnit.Framework.CategoryAttribute("Moderate")]
         [NUnit.Framework.CategoryAttribute("Title")]
         [NUnit.Framework.CategoryAttribute("AllPage")]
         [NUnit.Framework.CategoryAttribute("REQ_UI_01")]
         [NUnit.Framework.TestCaseAttribute("Home", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Form", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Error", new string[0])]
-        public virtual void ValidateThatTheOpenedPageSTitleIsUITestingSite(string page, string[] exampleTags)
+        public virtual void ValidateThatTheTitleOfThePage(string page, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Moderate",
@@ -84,7 +83,7 @@ namespace UITests.FeatureFiles
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate that the opened page\'s title is \"UI Testing Site\"", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate that the title of the page", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8

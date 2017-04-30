@@ -72,7 +72,6 @@ namespace UITests.FeatureFiles
         [NUnit.Framework.CategoryAttribute("REQ_UI_02")]
         [NUnit.Framework.TestCaseAttribute("Home", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Form", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Error", new string[0])]
         public virtual void TestWhetherTheCompanyLogoAppearedOrNot(string page, string[] exampleTags)
         {
             string[] @__tags = new string[] {

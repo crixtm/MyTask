@@ -1,11 +1,5 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UITests.Pages
 {
@@ -15,27 +9,31 @@ namespace UITests.Pages
         {
             driver = WebDriver.GetWebDriverInstance();
             driver.Navigate().GoToUrl("http://uitest.duodecadits.com/error");
-            var wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(2000))
-                   .Until(ExpectedConditions.ElementIsVisible(By.Id("dh_logo")));
+            var wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(2000));
         }
 
-        [FindsBy(How = How.Id, Using = "dh_logo")]
-        private IWebElement DHLogo;
+        public bool IsItError()
+        {
+            return driver.Title.Contains("404") ? true : false; 
+        }
 
         override
         public ErrorPage ClickErrorButton()
         {
             return new ErrorPage();
         }
+
         override
         public string GetLogoSRCAttribute()
         {
-            return DHLogo.GetAttribute("src");
+            return "404";
         }
+
         override
         public String GetPageTitle()
         {
             return driver.Title;
         }
+
     }
 }

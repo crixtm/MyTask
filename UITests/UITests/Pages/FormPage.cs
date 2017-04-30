@@ -2,14 +2,10 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UITests.Pages
 {
-    class FormPage : Page
+    public class FormPage : Page
     {
         public FormPage()
         {
@@ -30,6 +26,10 @@ namespace UITests.Pages
         private IWebElement FormButtonContainer;
         [FindsBy(How = How.Id, Using = "error")]
         private IWebElement ErrorButton;
+        [FindsBy(How = How.Id, Using = "hello-input")]
+        private IWebElement InputBox;
+        [FindsBy(How = How.Id, Using = "hello-submit")]
+        private IWebElement SubmitButton;
 
         override
         public ErrorPage ClickErrorButton()
@@ -37,19 +37,23 @@ namespace UITests.Pages
             ErrorButton.Click();
             return new ErrorPage();
         }
+
         public bool IsPageTitleTextExist()
         {
             return PageTitleText.Displayed ? true : false;
         }
+
         public HomePage ClickHomeButton()
         {
             HomeButton.Click();
             return new HomePage();
         }
+
         public bool IsFormButtonActive()
         {
             return FormButtonContainer.GetAttribute("class") == "active" ? true : false;
         }
+
         override
         public string GetLogoSRCAttribute()
         {
@@ -60,6 +64,27 @@ namespace UITests.Pages
         public String GetPageTitle()
         {
             return driver.Title;
+        }
+
+        public bool IsInputBoxExist()
+        {
+            return InputBox.Displayed;
+        }
+
+        public bool IsSubmitButtonExist()
+        {
+            return SubmitButton.Displayed;
+        }
+
+        public void FillTheInputbox(string Values)
+        {
+            InputBox.SendKeys(Values);
+        }
+
+        public HelloPage Submit()
+        {
+            SubmitButton.Click();
+            return new HelloPage();
         }
     }
 }

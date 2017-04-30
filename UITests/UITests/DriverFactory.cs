@@ -1,9 +1,6 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using UITests.Common;
-
 
 namespace UITests
 {
@@ -14,11 +11,13 @@ namespace UITests
             switch (browserName)
             {
                 case Browsers.CHROME:
-                    return new ChromeDriver();
+                    {
+                        return new ChromeDriver();
+                    }
+                    
                 default:
-                    return new FirefoxDriver();
+                    return new ChromeDriver();
             }
         }
-
     }
 }

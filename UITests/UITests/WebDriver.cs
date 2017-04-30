@@ -1,13 +1,10 @@
-﻿using System;
-using OpenQA.Selenium;
-using TechTalk.SpecFlow;
+﻿using OpenQA.Selenium;
 
 namespace UITests
 {
     internal class WebDriver
     {
         private static IWebDriver driver;
-
         private WebDriver() { }
 
         internal static IWebDriver GetWebDriverInstance()

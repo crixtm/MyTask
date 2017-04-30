@@ -5,7 +5,7 @@
 
 @High @ErrorPage @FormPage @HomePage @Navigation @MouseClick @REQ_UI_07
 Scenario Outline: Clicking ErrorButton loads ErrorPage
-	Given I have <Page> opened
+	Given I have <Page> page opened
 	When I press Error button
 	Then Http 404 Error should appear
 	
